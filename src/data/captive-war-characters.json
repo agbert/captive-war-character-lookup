@@ -1,0 +1,860 @@
+{
+  "metadata": {
+    "title": "The Captive's War Character Association Dataset",
+    "schema_version": "1.1.0",
+    "updated": "2026-09-08",
+    "books": {
+      "mercy": "The Mercy of Gods",
+      "faith": "The Faith of Beasts",
+      "livesuit": "Livesuit"
+    },
+    "primary_key": "characters object key (canonical character name)",
+    "sex_values": ["male", "female", "unknown"],
+    "sex_note": "Unknown includes unstated sex, collectives, artificial entities, and alien biology not safely mapped to male/female. Clae presents as female, but the underlying Swarm is classified unknown.",
+    "spoilers": "Contains major spoilers for the first two novels and Livesuit.",
+    "scope": "Named and narratively significant characters; incidental unnamed background individuals are omitted."
+  },
+  "characters": {
+    "Dafyd Alkhor": {
+      "aliases": ["Dafyd", "Lord Alkhor"],
+      "sex": "male",
+      "species": "human",
+      "books": ["mercy", "faith"],
+      "groups": ["tonner_workgroup", "human_moiety_leadership", "covert_resistance"],
+      "summary": "Junior researcher who becomes the Carryx-appointed intermediary and plans a long resistance from within.",
+      "associations": [
+        {"target": "Dorinda Alkhor", "type": "nephew_of", "books": ["mercy"]},
+        {"target": "Tonner Freis", "type": "subordinate_then_rival", "books": ["mercy", "faith"]},
+        {"target": "Else Annalise Yannin", "type": "lover_of", "books": ["mercy"]},
+        {"target": "The Swarm / Clae Audin", "type": "love_interest_then_ally", "books": ["mercy", "faith"]},
+        {"target": "Jessyn Kaul", "type": "trusted_ally", "books": ["mercy", "faith"]},
+        {"target": "Ekur-Tkalal", "type": "intermediary_for", "books": ["mercy", "faith"]},
+        {"target": "Uuya Tomos", "type": "co_conspirator_with", "books": ["faith"]},
+        {"target": "Llian Andermus", "type": "appoints", "books": ["faith"]},
+        {"target": "Bastien Korham", "type": "appoints", "books": ["faith"]}
+      ],
+      "events": ["anjiin_invasion", "night_drinker_conflict", "resistance_betrayal", "carryx_purge", "human_intermediary_appointment", "moiety_reorganization", "tonner_death", "clae_emergence", "sovran_succession", "two_sovrans_hypothesis"]
+    },
+    "Tonner Freis": {
+      "aliases": ["Tonner"],
+      "sex": "male",
+      "species": "human",
+      "books": ["mercy", "faith"],
+      "groups": ["tonner_workgroup", "human_moiety_research"],
+      "summary": "Brilliant proteome researcher whose scientific authority is displaced by Dafyd's political authority.",
+      "associations": [
+        {"target": "Else Annalise Yannin", "type": "former_lover_and_colleague", "books": ["mercy", "faith"]},
+        {"target": "Brun", "type": "mentor_and_supervisor", "books": ["faith"]},
+        {"target": "Jessyn Kaul", "type": "supervisor_and_medication_provider", "books": ["mercy"]},
+        {"target": "Tkson-Malkal", "type": "research_subject_of", "books": ["mercy"]}
+      ],
+      "events": ["anjiin_invasion", "night_drinker_conflict", "research_trial", "carryx_purge", "moiety_reorganization", "tonner_death"]
+    },
+    "Else Annalise Yannin": {
+      "aliases": ["Else", "Else Yannin"],
+      "sex": "female",
+      "species": "human",
+      "books": ["mercy", "faith"],
+      "groups": ["tonner_workgroup", "swarm_hosts"],
+      "summary": "Senior researcher, former partner of Tonner, lover of Dafyd, and host consumed by the Swarm.",
+      "associations": [
+        {"target": "The Swarm / Clae Audin", "type": "host_of", "books": ["mercy", "faith"]},
+        {"target": "Ameer Kindred", "type": "co_memory_within_swarm", "books": ["mercy", "faith"]}
+      ],
+      "events": ["anjiin_invasion", "resistance_betrayal", "carryx_purge", "swarm_transfer_to_jellit"]
+    },
+    "Jessyn Kaul": {
+      "aliases": ["Jessyn"],
+      "sex": "female",
+      "species": "human",
+      "books": ["mercy", "faith"],
+      "groups": ["tonner_workgroup", "world_expedition"],
+      "summary": "Biologist, survivor and emerging fighter who discovers the Deathless enemy's connection to humanity.",
+      "associations": [
+        {"target": "Jellit Kaul", "type": "sister_of", "books": ["mercy", "faith"]},
+        {"target": "Irinna", "type": "close_friend_and_unrequited_love", "books": ["mercy", "faith"]},
+        {"target": "Campar", "type": "surrogate_sibling_of", "books": ["mercy"]},
+        {"target": "Garral Pär", "type": "love_interest_of", "books": ["faith"]},
+        {"target": "Third Gardener", "type": "subordinate_then_killer_of", "books": ["faith"]},
+        {"target": "Corvall", "type": "captive_then_co_conspirator", "books": ["faith"]}
+      ],
+      "events": ["anjiin_invasion", "night_drinker_conflict", "human_retaliation", "carryx_purge", "world_expedition", "world_refugee_contact", "world_sabotage", "deathless_identity_discovery"]
+    },
+    "Campar": {
+      "aliases": [],
+      "sex": "male",
+      "species": "human",
+      "books": ["mercy", "faith"],
+      "groups": ["tonner_workgroup", "carryx_warship_team"],
+      "summary": "Biologist, caretaker and humorist who survives hazardous Carryx military deployments.",
+      "associations": [
+        {"target": "Rickar Daumatin", "type": "friend_and_shipmate", "books": ["mercy", "faith"]},
+        {"target": "Ghati", "type": "lover_of", "books": ["faith"]},
+        {"target": "Vaudai", "type": "colleague_of", "books": ["faith"]}
+      ],
+      "events": ["anjiin_invasion", "night_drinker_conflict", "human_retaliation", "ashtin_kah_boarding", "jurupe_battle", "return_to_world_palace"]
+    },
+    "Rickar Daumatin": {
+      "aliases": ["Rickar"],
+      "sex": "male",
+      "species": "human",
+      "books": ["mercy", "faith"],
+      "groups": ["tonner_workgroup", "carryx_warship_team"],
+      "summary": "A compromised and later rehabilitated researcher whose death transmits the Swarm's intelligence to the Deathless.",
+      "associations": [
+        {"target": "Dennia", "type": "lover_of", "books": ["mercy", "faith"]},
+        {"target": "Synnia", "type": "friend_in_exile", "books": ["mercy"]},
+        {"target": "The Swarm / Clae Audin", "type": "unwitting_carrier_for", "books": ["faith"]},
+        {"target": "Dervan", "type": "shipmate_and_trainer", "books": ["faith"]}
+      ],
+      "events": ["workgroup_takeover_attempt", "night_drinker_conflict", "carryx_purge", "ashtin_kah_boarding", "jurupe_battle", "swarm_transmission"]
+    },
+    "Jellit Kaul": {
+      "aliases": ["Jellit"],
+      "sex": "male",
+      "species": "human",
+      "books": ["mercy", "faith"],
+      "groups": ["astronomy_group", "ostencour_resistance", "swarm_hosts"],
+      "summary": "Jessyn's astronomer brother; joins the resistance and is later consumed and impersonated by the Swarm.",
+      "associations": [
+        {"target": "Llaren Morse", "type": "colleague_of", "books": ["mercy"]},
+        {"target": "Urrys Ostencour", "type": "resistance_member_under", "books": ["mercy"]},
+        {"target": "The Swarm / Clae Audin", "type": "host_consumed_by", "books": ["mercy", "faith"]}
+      ],
+      "events": ["anjiin_fleet_discovery", "resistance_betrayal", "carryx_purge", "swarm_transfer_to_jellit", "clae_emergence"]
+    },
+    "Synnia": {
+      "aliases": [],
+      "sex": "female",
+      "species": "human",
+      "books": ["mercy"],
+      "groups": ["tonner_workgroup", "ostencour_resistance"],
+      "summary": "Researcher whose grief over Nol turns into uncompromising resistance.",
+      "associations": [
+        {"target": "Nol", "type": "life_partner_of", "books": ["mercy"]},
+        {"target": "Urrys Ostencour", "type": "resistance_member_under", "books": ["mercy"]}
+      ],
+      "events": ["anjiin_invasion", "transport_revolt", "resistance_betrayal", "carryx_purge"]
+    },
+    "Nol": {
+      "aliases": ["Nöl"],
+      "sex": "male",
+      "species": "human",
+      "books": ["mercy"],
+      "groups": ["tonner_workgroup"],
+      "summary": "Older researcher and Synnia's longtime partner, killed during the invasion.",
+      "associations": [],
+      "events": ["anjiin_invasion"]
+    },
+    "Irinna": {
+      "aliases": [],
+      "sex": "female",
+      "species": "human",
+      "books": ["mercy", "faith"],
+      "groups": ["tonner_workgroup"],
+      "summary": "Junior researcher and Jessyn's close friend, killed by the Night Drinkers.",
+      "associations": [],
+      "events": ["anjiin_invasion", "night_drinker_conflict"]
+    },
+    "Urrys Ostencour": {
+      "aliases": ["Ostencour"],
+      "sex": "male",
+      "species": "human",
+      "books": ["mercy"],
+      "groups": ["irvian_security", "ostencour_resistance"],
+      "summary": "Security official who organizes armed resistance against the Carryx.",
+      "associations": [
+        {"target": "Skinnerling", "type": "directs", "books": ["mercy"]},
+        {"target": "Kos", "type": "directs", "books": ["mercy"]},
+        {"target": "Dafyd Alkhor", "type": "ideological_opponent_of", "books": ["mercy"]}
+      ],
+      "events": ["transport_revolt", "resistance_betrayal", "carryx_purge"]
+    },
+    "Dorinda Alkhor": {
+      "aliases": ["Dorinda"],
+      "sex": "female",
+      "species": "human",
+      "books": ["mercy", "faith"],
+      "groups": ["anjiin_funding_colloquy"],
+      "summary": "Dafyd's aunt, guardian and political mentor.",
+      "associations": [
+        {"target": "Uuya Tomos", "type": "former_associate_of", "books": ["faith"]},
+        {"target": "Ver Cannedan", "type": "patron_of", "books": ["faith"]}
+      ],
+      "events": ["workgroup_takeover_attempt", "anjiin_invasion"]
+    },
+    "Llaren Morse": {
+      "aliases": ["Llaren"],
+      "sex": "male",
+      "species": "human",
+      "books": ["mercy", "faith"],
+      "groups": ["astronomy_group", "ostencour_resistance"],
+      "summary": "Astronomer who helps discover the Carryx fleet and later joins the resistance.",
+      "associations": [
+        {"target": "Farad Morse", "type": "nephew_of", "books": ["faith"]}
+      ],
+      "events": ["anjiin_fleet_discovery", "resistance_betrayal", "carryx_purge"]
+    },
+    "Dennia": {
+      "aliases": [],
+      "sex": "female",
+      "species": "human",
+      "books": ["mercy", "faith"],
+      "groups": ["astronomy_group", "ostencour_resistance"],
+      "summary": "Laser specialist and Rickar's lover, killed in the purge.",
+      "associations": [],
+      "events": ["resistance_betrayal", "carryx_purge"]
+    },
+    "Allstin": {
+      "aliases": [],
+      "sex": "male",
+      "species": "human",
+      "books": ["mercy", "faith"],
+      "groups": ["astronomy_group", "ostencour_resistance"],
+      "summary": "Senior astronomy researcher and resistance participant.",
+      "associations": [
+        {"target": "Merrol", "type": "colleague_of", "books": ["mercy"]}
+      ],
+      "events": ["resistance_betrayal", "carryx_purge"]
+    },
+    "Merrol": {
+      "aliases": [],
+      "sex": "male",
+      "species": "human",
+      "books": ["mercy"],
+      "groups": ["astronomy_group", "ostencour_resistance"],
+      "summary": "Astronomy department chair who views Dafyd as a possible threat to the resistance.",
+      "associations": [],
+      "events": ["resistance_betrayal", "carryx_purge"]
+    },
+    "Samar Austad": {
+      "aliases": ["Austad"],
+      "sex": "male",
+      "species": "human",
+      "books": ["mercy"],
+      "groups": ["dyan_academy"],
+      "summary": "Administrator behind the attempted takeover of Tonner's project, killed by the Swarm.",
+      "associations": [
+        {"target": "Rickar Daumatin", "type": "recruits_as_insider", "books": ["mercy"]},
+        {"target": "The Swarm / Clae Audin", "type": "killed_by", "books": ["mercy"]}
+      ],
+      "events": ["workgroup_takeover_attempt"]
+    },
+    "Ferre Luminan": {
+      "aliases": [],
+      "sex": "unknown",
+      "species": "human",
+      "books": ["mercy"],
+      "groups": ["energy_physics_group", "ostencour_resistance"],
+      "summary": "One of the senior leaders in Ostencour's resistance network.",
+      "associations": [],
+      "events": ["resistance_betrayal", "carryx_purge"]
+    },
+    "Skinnerling": {
+      "aliases": [],
+      "sex": "unknown",
+      "species": "human",
+      "books": ["mercy"],
+      "groups": ["ostencour_resistance"],
+      "summary": "Engineer who manufactures resistance weapons with Kos.",
+      "associations": [{"target": "Kos", "type": "works_with", "books": ["mercy"]}],
+      "events": ["resistance_betrayal", "carryx_purge"]
+    },
+    "Kos": {
+      "aliases": [],
+      "sex": "unknown",
+      "species": "human",
+      "books": ["mercy"],
+      "groups": ["ostencour_resistance"],
+      "summary": "Engineer who manufactures resistance weapons with Skinnerling.",
+      "associations": [],
+      "events": ["resistance_betrayal", "carryx_purge"]
+    },
+    "The Swarm / Clae Audin": {
+      "aliases": ["The Swarm", "Swarm", "Clae", "Clae Audin"],
+      "sex": "unknown",
+      "gender_presentation": "female as Clae Audin",
+      "species": "engineered nano-intelligence",
+      "books": ["mercy", "faith"],
+      "groups": ["deathless_agents", "swarm_hosts", "covert_resistance"],
+      "summary": "A Deathless spy that consumes successive hosts and eventually forms the autonomous identity Clae Audin.",
+      "associations": [
+        {"target": "Ameer Kindred", "type": "consumes_and_reconstructs", "books": ["mercy", "faith"]},
+        {"target": "Else Annalise Yannin", "type": "consumes_and_reconstructs", "books": ["mercy", "faith"]},
+        {"target": "Jellit Kaul", "type": "consumes_and_reconstructs", "books": ["mercy", "faith"]},
+        {"target": "Rickar Daumatin", "type": "uses_as_transmission_carrier", "books": ["faith"]},
+        {"target": "Ennil Day", "type": "manipulates_memory_of", "books": ["faith"]}
+      ],
+      "events": ["workgroup_takeover_attempt", "resistance_betrayal", "swarm_transfer_to_jellit", "clae_emergence", "swarm_transmission", "two_sovrans_hypothesis"]
+    },
+    "Ameer Kindred": {
+      "aliases": ["Ameer"],
+      "sex": "female",
+      "species": "human",
+      "books": ["mercy", "faith"],
+      "groups": ["swarm_hosts"],
+      "summary": "The Swarm's first known host, surviving only as reconstructed memories within it.",
+      "associations": [],
+      "events": ["clae_emergence"]
+    },
+    "Tkson-Malkal": {
+      "aliases": ["Tkson of cohort Malkal", "Original Keeper-Librarian", "The Librarian"],
+      "sex": "unknown",
+      "species": "Carryx",
+      "books": ["mercy"],
+      "groups": ["carryx_hierarchy", "human_moiety_overseers"],
+      "summary": "First Carryx keeper-librarian assigned to the human moiety.",
+      "associations": [
+        {"target": "Dafyd Alkhor", "type": "uses_as_informal_intermediary", "books": ["mercy"]},
+        {"target": "The Sovran", "type": "executed_by_order_of", "books": ["mercy"]},
+        {"target": "Ekur-Tkalal", "type": "succeeded_by", "books": ["mercy"]}
+      ],
+      "events": ["research_trial", "resistance_betrayal", "carryx_purge", "human_intermediary_appointment"]
+    },
+    "Ekur-Tkalal": {
+      "aliases": ["Ekur of the cohort Tkalal", "Ekur"],
+      "sex": "male",
+      "species": "Carryx",
+      "books": ["mercy", "faith"],
+      "groups": ["carryx_hierarchy", "human_moiety_overseers"],
+      "summary": "Former subjugator and interrogator who becomes keeper-librarian of humanity.",
+      "associations": [
+        {"target": "The Sovran", "type": "serves", "books": ["mercy", "faith"]},
+        {"target": "Surur-Tlassen", "type": "reports_through", "books": ["faith"]}
+      ],
+      "events": ["ayayeh_campaign", "human_intermediary_appointment", "moiety_reorganization", "tonner_death", "sovran_succession"]
+    },
+    "The Sovran": {
+      "aliases": ["Reigning Sovran", "Old Sovran"],
+      "sex": "female",
+      "species": "Carryx",
+      "books": ["mercy", "faith"],
+      "groups": ["carryx_hierarchy"],
+      "summary": "Supreme functional ruler of the Carryx, ritually killed and replaced by her daughter.",
+      "associations": [
+        {"target": "Surur-Tlassen", "type": "commands", "books": ["faith"]},
+        {"target": "The New Sovran", "type": "mother_and_predecessor_of", "books": ["faith"]}
+      ],
+      "events": ["carryx_purge", "sovran_succession"]
+    },
+    "Surur-Tlassen": {
+      "aliases": ["Surur of the cohort Tlassen", "Surur", "Regulator-Librarian"],
+      "sex": "male",
+      "species": "Carryx",
+      "books": ["mercy", "faith"],
+      "groups": ["carryx_hierarchy"],
+      "summary": "Senior regulator and direct conduit to the Sovran who begins transitioning to creche-keeper status.",
+      "associations": [
+        {"target": "Urur-Atlak", "type": "received_into_creche_by", "books": ["faith"]},
+        {"target": "The New Sovran", "type": "serves", "books": ["faith"]}
+      ],
+      "events": ["swarm_transmission", "sovran_succession"]
+    },
+    "The New Sovran": {
+      "aliases": ["Green-crested daughter"],
+      "sex": "female",
+      "species": "Carryx",
+      "books": ["faith"],
+      "groups": ["carryx_hierarchy"],
+      "summary": "Daughter who kills and seamlessly replaces the reigning Sovran.",
+      "associations": [],
+      "events": ["sovran_succession", "two_sovrans_hypothesis"]
+    },
+    "Urur-Atlak": {
+      "aliases": ["Urur of cohort Atlak"],
+      "sex": "unknown",
+      "sex_note": "Explicitly a neuter remnant and former high male.",
+      "species": "Carryx",
+      "books": ["faith"],
+      "groups": ["carryx_hierarchy", "carryx_creche_keepers"],
+      "summary": "Former high male transformed into a sexless creche-keeper.",
+      "associations": [],
+      "events": ["sovran_succession"]
+    },
+    "The Subjugator-Prime": {
+      "aliases": ["Subjugator-Prime"],
+      "sex": "male",
+      "species": "Carryx",
+      "books": ["mercy"],
+      "groups": ["carryx_military"],
+      "summary": "Military subordinate sacrificed during Ekur-Tkalal's Ayayeh campaign.",
+      "associations": [{"target": "Ekur-Tkalal", "type": "subordinate_of", "books": ["mercy"]}],
+      "events": ["ayayeh_campaign"]
+    },
+    "Night Drinkers' Keeper-Librarian": {
+      "aliases": ["Notch-Headed Carryx"],
+      "sex": "unknown",
+      "species": "Carryx",
+      "books": ["mercy"],
+      "groups": ["carryx_hierarchy", "night_drinker_moiety"],
+      "summary": "Carryx overseer punished after the Night Drinkers lose their competition with humanity.",
+      "associations": [{"target": "Tkson-Malkal", "type": "peer_subordinate_to", "books": ["mercy"]}],
+      "events": ["night_drinker_conflict", "human_retaliation"]
+    },
+    "Garral Pär": {
+      "aliases": ["Garral"],
+      "sex": "male",
+      "species": "human",
+      "books": ["faith"],
+      "groups": ["world_expedition", "deathless_contacts"],
+      "summary": "Archaeologist who deciphers the hidden humans' language and becomes a bridge to the Deathless.",
+      "associations": [
+        {"target": "Omco", "type": "language_partner", "books": ["faith"]},
+        {"target": "Carlon", "type": "debriefed_by", "books": ["faith"]}
+      ],
+      "events": ["world_expedition", "world_refugee_contact", "world_sabotage", "deathless_identity_discovery", "deathless_rescue"]
+    },
+    "Uuya Tomos": {
+      "aliases": ["Uuya"],
+      "sex": "female",
+      "species": "human",
+      "books": ["faith"],
+      "groups": ["human_moiety_leadership", "covert_resistance"],
+      "summary": "Folklorist who designs a covert resistance culture for future Carryx-born humans.",
+      "associations": [],
+      "events": ["moiety_reorganization", "tonner_memorial", "two_sovrans_hypothesis"]
+    },
+    "Bastien Korham": {
+      "aliases": ["Korham"],
+      "sex": "male",
+      "species": "human",
+      "books": ["faith"],
+      "groups": ["human_moiety_leadership"],
+      "summary": "Infrastructure director who expands housing, agriculture, education and nursery capacity.",
+      "associations": [{"target": "Llian Andermus", "type": "administrative_counterweight_to", "books": ["faith"]}],
+      "events": ["moiety_reorganization"]
+    },
+    "Llian Andermus": {
+      "aliases": ["Andermus"],
+      "sex": "female",
+      "species": "human",
+      "books": ["faith"],
+      "groups": ["human_moiety_leadership", "human_security"],
+      "summary": "Dafyd's severe and highly capable director of security.",
+      "associations": [],
+      "events": ["moiety_reorganization"]
+    },
+    "Brun": {
+      "aliases": [],
+      "sex": "male",
+      "species": "human",
+      "books": ["faith"],
+      "groups": ["human_moiety_research"],
+      "summary": "Tonner's deputy and successor whose work stoppage provokes Dafyd's ritual violence.",
+      "associations": [
+        {"target": "Dafyd Alkhor", "type": "subordinate_then_opponent", "books": ["faith"]}
+      ],
+      "events": ["tonner_death", "brun_arm_breaking"]
+    },
+    "Ver Cannedan": {
+      "aliases": ["Ver"],
+      "sex": "male",
+      "species": "human",
+      "books": ["faith"],
+      "groups": ["human_moiety", "covert_resistance"],
+      "summary": "Choreographer who assaults Dafyd, then applies his expertise to reading Carryx movement.",
+      "associations": [{"target": "Uuya Tomos", "type": "works_for", "books": ["faith"]}],
+      "events": ["moiety_reorganization", "tonner_memorial"]
+    },
+    "Ghati": {
+      "aliases": [],
+      "sex": "male",
+      "species": "human",
+      "books": ["faith"],
+      "groups": ["carryx_warship_team"],
+      "summary": "Campar's lover and fellow military captive, later reassigned with Vaudai.",
+      "associations": [{"target": "Vaudai", "type": "leaves_on_mission_with", "books": ["faith"]}],
+      "events": ["ashtin_kah_boarding", "jurupe_battle", "return_to_world_palace"]
+    },
+    "Vaudai": {
+      "aliases": [],
+      "sex": "unknown",
+      "species": "unknown slug-like alien",
+      "books": ["faith"],
+      "groups": ["carryx_warship_team"],
+      "summary": "Alien translator and tactical pattern analyst serving aboard a Carryx warship.",
+      "associations": [],
+      "events": ["ashtin_kah_boarding", "jurupe_battle", "return_to_world_palace"]
+    },
+    "Dervan": {
+      "aliases": [],
+      "sex": "female",
+      "species": "human",
+      "books": ["faith"],
+      "groups": ["carryx_warship_team"],
+      "summary": "Anxious human captive who learns the tactical display and witnesses planetary destruction.",
+      "associations": [
+        {"target": "Danna", "type": "companion_of", "books": ["faith"]},
+        {"target": "Emmin", "type": "companion_of", "books": ["faith"]}
+      ],
+      "events": ["jurupe_battle"]
+    },
+    "Danna": {
+      "aliases": [],
+      "sex": "unknown",
+      "species": "human",
+      "books": ["faith"],
+      "groups": ["carryx_warship_team"],
+      "summary": "Human captive and companion of Dervan and Emmin.",
+      "associations": [],
+      "events": ["jurupe_battle"]
+    },
+    "Emmin": {
+      "aliases": [],
+      "sex": "unknown",
+      "species": "human",
+      "books": ["faith"],
+      "groups": ["carryx_warship_team"],
+      "summary": "Human captive and companion of Dervan and Danna.",
+      "associations": [],
+      "events": ["jurupe_battle"]
+    },
+    "Corvall": {
+      "aliases": [],
+      "sex": "male",
+      "species": "human",
+      "books": ["faith"],
+      "groups": ["deathless_military", "world_refugees"],
+      "summary": "Armored anti-Carryx soldier who sacrifices himself to secure the refugee children's escape.",
+      "associations": [
+        {"target": "Manta", "type": "co_protector_with", "books": ["faith"]},
+        {"target": "Omco", "type": "co_protector_with", "books": ["faith"]}
+      ],
+      "events": ["world_refugee_contact", "world_sabotage", "deathless_rescue"]
+    },
+    "Manta": {
+      "aliases": [],
+      "sex": "female",
+      "species": "human",
+      "books": ["faith"],
+      "groups": ["world_refugees", "deathless_contacts"],
+      "summary": "Tutor and caretaker protecting ten refugee children.",
+      "associations": [{"target": "Jessyn Kaul", "type": "supports_during_crisis", "books": ["faith"]}],
+      "events": ["world_refugee_contact", "world_sabotage", "deathless_rescue"]
+    },
+    "Omco": {
+      "aliases": [],
+      "sex": "male",
+      "species": "human",
+      "books": ["faith"],
+      "groups": ["world_refugees", "deathless_contacts"],
+      "summary": "Language tutor whose conversations with Garral establish common human ancestry.",
+      "associations": [],
+      "events": ["world_refugee_contact", "deathless_identity_discovery", "deathless_rescue"]
+    },
+    "Carlon": {
+      "aliases": [],
+      "sex": "male",
+      "species": "human",
+      "books": ["faith"],
+      "groups": ["deathless_contacts"],
+      "summary": "Deathless-associated elder who begins debriefing Garral about Anjiin.",
+      "associations": [],
+      "events": ["deathless_rescue"]
+    },
+    "Third Gardener": {
+      "aliases": [],
+      "sex": "unknown",
+      "species": "Sinen",
+      "books": ["faith"],
+      "groups": ["carryx_factors", "world_expedition"],
+      "summary": "Sinen administrator overseeing Jessyn's field expedition.",
+      "associations": [],
+      "events": ["world_expedition", "world_sabotage"]
+    },
+    "Farad Morse": {
+      "aliases": ["Farad"],
+      "sex": "male",
+      "species": "human",
+      "books": ["faith"],
+      "groups": ["astronomy_group"],
+      "summary": "Llaren's uncle, who confronts Dafyd about Jellit's disappearance.",
+      "associations": [{"target": "Dafyd Alkhor", "type": "confronts", "books": ["faith"]}],
+      "events": ["moiety_reorganization", "clae_emergence"]
+    },
+    "Ennil Day": {
+      "aliases": ["Ennil"],
+      "sex": "unknown",
+      "species": "human",
+      "books": ["faith"],
+      "groups": ["dyan_academy", "human_moiety_research"],
+      "summary": "Researcher whose memory is manipulated to validate Clae's invented identity.",
+      "associations": [],
+      "events": ["clae_emergence"]
+    },
+    "Kirin Foss": {
+      "aliases": ["Kirin"],
+      "sex": "male",
+      "species": "human transitioning through livesuit integration",
+      "books": ["livesuit"],
+      "groups": ["kaladon_rescue_workers", "livesuit_infantry", "kirin_combat_units"],
+      "summary": "Former medical rescue worker who volunteers for livesuit infantry and discovers that the suit progressively replaces its wearer.",
+      "associations": [
+        {"target": "Mina", "type": "former_partner_of", "books": ["livesuit"]},
+        {"target": "Piotr", "type": "friend_colleague_and_fellow_volunteer", "books": ["livesuit"]},
+        {"target": "Estebán Corval", "type": "subordinate_and_comrade_of", "books": ["livesuit"]},
+        {"target": "Deborah Ross", "type": "comrade_with_mutual_affection", "books": ["livesuit"]},
+        {"target": "Gleaner", "type": "squadmate_of", "books": ["livesuit"]},
+        {"target": "Noor", "type": "squadmate_of", "books": ["livesuit"]},
+        {"target": "Simeon", "type": "initially_commanded_by", "books": ["livesuit"]}
+      ],
+      "events": ["livesuit_enlistment", "livesuit_bonding", "first_livesuit_deployment", "egg_chamber_assault", "mina_warning", "piotr_truth_discovered", "kirin_integration_discovered"]
+    },
+    "Piotr": {
+      "aliases": [],
+      "sex": "male",
+      "species": "human progressively replaced by livesuit",
+      "books": ["livesuit"],
+      "groups": ["kaladon_rescue_workers", "livesuit_infantry", "kirin_combat_units"],
+      "summary": "Kirin's friend and fellow medic; catastrophic injuries leave a suit-operated body continuing to present as Piotr.",
+      "associations": [
+        {"target": "Mina", "type": "acquaintance_of", "books": ["livesuit"]},
+        {"target": "Jellit Kaul", "type": "thematic_parallel_to", "books": ["livesuit", "faith"], "note": "Both remain behaviorally present after the original person has apparently been consumed or destroyed."}
+      ],
+      "events": ["livesuit_enlistment", "livesuit_bonding", "first_livesuit_deployment", "piotr_catastrophic_injury", "piotr_truth_discovered"]
+    },
+    "Mina": {
+      "aliases": [],
+      "sex": "female",
+      "species": "human",
+      "books": ["livesuit"],
+      "groups": ["kaladon_civilians", "anti_war_dissent"],
+      "summary": "Kirin's former partner, separated from him by war and time dilation, who sends a censored warning about the livesuit program.",
+      "associations": [
+        {"target": "Kirin Foss", "type": "former_partner_and_warning_sender", "books": ["livesuit"]}
+      ],
+      "events": ["livesuit_enlistment", "relativistic_separation", "mina_warning"]
+    },
+    "Estebán Corval": {
+      "aliases": ["Corval", "Esteban Corval"],
+      "sex": "male",
+      "species": "human integrated with livesuit",
+      "books": ["livesuit"],
+      "groups": ["livesuit_infantry", "kirin_combat_units"],
+      "summary": "Veteran livesuit leader and mentor to Kirin; possibly connected to the similarly named Corvall in The Faith of Beasts.",
+      "associations": [
+        {"target": "Simeon", "type": "group_two_leader_under", "books": ["livesuit"]},
+        {"target": "Corvall", "type": "possibly_same_as", "books": ["livesuit", "faith"], "confidence": "low", "status": "unconfirmed", "note": "Roles and armor align, but the printed names differ by one letter and chronology is unresolved."}
+      ],
+      "events": ["first_livesuit_deployment", "egg_chamber_assault", "combat_unit_reshuffling"]
+    },
+    "Deborah Ross": {
+      "aliases": ["Ross"],
+      "sex": "female",
+      "species": "human integrated with livesuit",
+      "books": ["livesuit"],
+      "groups": ["livesuit_infantry", "kirin_combat_units"],
+      "summary": "Experienced livesuit soldier, former naval machinist and respected comrade of Kirin.",
+      "associations": [
+        {"target": "Piotr", "type": "squadmate_of", "books": ["livesuit"]}
+      ],
+      "events": ["livesuit_bonding", "first_livesuit_deployment", "combat_unit_reshuffling"]
+    },
+    "Gleaner": {
+      "aliases": [],
+      "sex": "male",
+      "species": "human integrated with livesuit",
+      "books": ["livesuit"],
+      "groups": ["livesuit_infantry", "kirin_combat_units"],
+      "summary": "Reliable, humorous livesuit squadmate whose reassignment demonstrates the constant erosion of wartime relationships.",
+      "associations": [
+        {"target": "Estebán Corval", "type": "squadmate_of", "books": ["livesuit"]}
+      ],
+      "events": ["egg_chamber_assault", "combat_unit_reshuffling"]
+    },
+    "Noor": {
+      "aliases": [],
+      "sex": "unknown",
+      "species": "human integrated with livesuit",
+      "books": ["livesuit"],
+      "groups": ["livesuit_infantry", "kirin_combat_units"],
+      "summary": "Member of Kirin's shifting livesuit combat team.",
+      "associations": [],
+      "events": ["egg_chamber_assault", "combat_unit_reshuffling"]
+    },
+    "Simeon": {
+      "aliases": [],
+      "sex": "male",
+      "species": "human integrated with livesuit",
+      "books": ["livesuit"],
+      "groups": ["livesuit_infantry"],
+      "summary": "Livesuit officer who leads Kirin's first operational group, with Corval commanding a subordinate group.",
+      "associations": [],
+      "events": ["first_livesuit_deployment"]
+    },
+    "Sergeant Huang": {
+      "aliases": ["Huang"],
+      "sex": "unknown",
+      "species": "human",
+      "books": ["livesuit"],
+      "groups": ["livesuit_program", "central_control"],
+      "summary": "Recruitment and orientation authority who presents the livesuit program without disclosing its irreversible consequences.",
+      "associations": [
+        {"target": "Kirin Foss", "type": "recruits_and_orients", "books": ["livesuit"]},
+        {"target": "Piotr", "type": "recruits_and_orients", "books": ["livesuit"]}
+      ],
+      "events": ["livesuit_enlistment", "livesuit_bonding"]
+    },
+    "Eric Santos": {
+      "aliases": ["Santos"],
+      "sex": "male",
+      "species": "human integrated with livesuit",
+      "books": ["livesuit"],
+      "groups": ["livesuit_infantry"],
+      "summary": "Talkative livesuit soldier previously known to Corval and assigned during a unit reshuffle.",
+      "associations": [
+        {"target": "Estebán Corval", "type": "former_trainee_or_comrade_of", "books": ["livesuit"]}
+      ],
+      "events": ["combat_unit_reshuffling"]
+    }
+  },
+  "groups": {
+    "tonner_workgroup": {"name": "Tonner Freis's original workgroup", "kind": "human research team"},
+    "astronomy_group": {"name": "Near-field astronomy/visualization group", "kind": "human research team"},
+    "ostencour_resistance": {"name": "Ostencour resistance", "kind": "human insurgency"},
+    "human_moiety": {"name": "Human moiety", "kind": "Carryx captive population"},
+    "human_moiety_leadership": {"name": "Human moiety leadership", "kind": "human administration"},
+    "human_moiety_research": {"name": "Human moiety research organization", "kind": "human research organization"},
+    "human_moiety_overseers": {"name": "Human moiety overseers", "kind": "Carryx administration"},
+    "human_security": {"name": "Human security organization", "kind": "human administration"},
+    "covert_resistance": {"name": "Dafyd's long-term resistance", "kind": "human insurgency"},
+    "swarm_hosts": {"name": "Swarm hosts and incorporated identities", "kind": "host lineage"},
+    "deathless_agents": {"name": "Deathless agents", "kind": "anti-Carryx intelligence network"},
+    "deathless_military": {"name": "Deathless military", "kind": "anti-Carryx military"},
+    "deathless_contacts": {"name": "Deathless-associated humans", "kind": "anti-Carryx population"},
+    "world_expedition": {"name": "World field expedition", "kind": "Carryx-directed research team"},
+    "world_refugees": {"name": "World refugee group", "kind": "hidden human survivors"},
+    "carryx_warship_team": {"name": "Carryx warship captive team", "kind": "mixed-species work group"},
+    "carryx_hierarchy": {"name": "Carryx hierarchy", "kind": "imperial administration"},
+    "carryx_military": {"name": "Carryx military", "kind": "imperial military"},
+    "carryx_creche_keepers": {"name": "Carryx creche-keepers", "kind": "Carryx reproductive caste"},
+    "carryx_factors": {"name": "Carryx factors", "kind": "subjugated overseer species"},
+    "night_drinker_moiety": {"name": "Night Drinker moiety", "kind": "Carryx captive population"},
+    "irvian_security": {"name": "Irvian Security Service", "kind": "Anjiin security organization"},
+    "anjiin_funding_colloquy": {"name": "Anjiin funding colloquy", "kind": "research governance"},
+    "dyan_academy": {"name": "Dyan Academy", "kind": "Anjiin academic institution"},
+    "energy_physics_group": {"name": "Energy physics group", "kind": "human research team"},
+    "kaladon_rescue_workers": {"name": "Kaladon medical rescue workers", "kind": "civilian emergency service"},
+    "kaladon_civilians": {"name": "Kaladon civilians", "kind": "civilian population"},
+    "anti_war_dissent": {"name": "Anti-war dissent", "kind": "civilian political movement"},
+    "livesuit_program": {"name": "Livesuit program", "kind": "military program"},
+    "livesuit_infantry": {"name": "Livesuit infantry", "kind": "human/Deathless military force"},
+    "kirin_combat_units": {"name": "Kirin's combat units", "kind": "changing livesuit squads"},
+    "central_control": {"name": "Central Control", "kind": "military command and information-control system"}
+  },
+  "events": {
+    "workgroup_takeover_attempt": {"name": "Attempted takeover of Tonner's project", "book": "mercy", "summary": "Dyan Academy attempts to divide Tonner's team; the effort collapses after Austad's death."},
+    "anjiin_fleet_discovery": {"name": "Discovery of the incoming fleet", "book": "mercy", "summary": "Astronomers identify the anomaly that reveals the Carryx approach."},
+    "anjiin_invasion": {"name": "Conquest of Anjiin", "book": "mercy", "summary": "The Carryx conquer Anjiin, conduct a mass culling and abduct useful humans."},
+    "transport_revolt": {"name": "Transport-ship revolt", "book": "mercy", "summary": "Ostencour organizes an unsuccessful attack against the Soft Lothark guards."},
+    "research_trial": {"name": "Berry/not-turtle research trial", "book": "mercy", "summary": "The human team must make one captive organism nutritionally compatible with another."},
+    "night_drinker_conflict": {"name": "Night Drinker attack", "book": "mercy", "summary": "The rival moiety attacks the human laboratory and kills Irinna."},
+    "human_retaliation": {"name": "Human raid on the Night Drinkers", "book": "mercy", "summary": "Jessyn leads a retaliatory raid; the Carryx later exterminate the losing moiety."},
+    "resistance_betrayal": {"name": "Exposure of Ostencour's resistance", "book": "mercy", "summary": "Dafyd and Jellit disclose the planned rebellion to prevent a wider human extermination."},
+    "carryx_purge": {"name": "Carryx purge of the resistance", "book": "mercy", "summary": "Rak-hund kill resistance members, including Synnia and Dennia."},
+    "swarm_transfer_to_jellit": {"name": "Swarm transfer from Else to Jellit", "book": "mercy", "summary": "Else dies after the Swarm moves into and consumes Jellit."},
+    "ayayeh_campaign": {"name": "Battle around Ayayeh", "book": "mercy", "summary": "Ekur discovers an enemy-manufactured trap and sacrifices most of the Carryx force."},
+    "human_intermediary_appointment": {"name": "Dafyd appointed intermediary", "book": "mercy", "summary": "Ekur replaces Tkson-Malkal and makes Dafyd the sole authorized human contact."},
+    "moiety_reorganization": {"name": "Reorganization of the human moiety", "book": "faith", "summary": "Dafyd creates administrative, security, cultural and infrastructure functions."},
+    "tonner_death": {"name": "Death of Tonner Freis", "book": "faith", "summary": "Soft Lothark guards kill Tonner after overhearing his discovery about their behavior."},
+    "tonner_memorial": {"name": "Tonner's memorial", "book": "faith", "summary": "Uuya and Dafyd turn Tonner's remembrance into cultural resistance."},
+    "world_expedition": {"name": "Scientific expedition to World", "book": "faith", "summary": "Jessyn and Garral join a Carryx-directed survey of a conquered planet."},
+    "world_refugee_contact": {"name": "Contact with World's hidden humans", "book": "faith", "summary": "Jessyn and Garral meet Corvall, Manta, Omco and the refugee children."},
+    "deathless_identity_discovery": {"name": "Human identity of the Deathless discovered", "book": "faith", "summary": "Language and biological evidence reveal that Anjiin humanity and the Deathless-associated people share ancestry."},
+    "world_sabotage": {"name": "World sabotage and escape plan", "book": "faith", "summary": "Corvall sacrifices himself while Jessyn smuggles a sabotage device onto a Carryx ship."},
+    "deathless_rescue": {"name": "Rescue by the Deathless", "book": "faith", "summary": "Garral and the refugees escape and establish contact with the Deathless organization."},
+    "ashtin_kah_boarding": {"name": "Ashtin-Kah derelict boarding", "book": "faith", "summary": "The captive warship team boards an enemy command vessel that failed to self-destruct."},
+    "jurupe_battle": {"name": "Battle at Jurupe", "book": "faith", "summary": "The Carryx wage genocidal warfare; Campar confronts a reanimating Deathless soldier."},
+    "swarm_transmission": {"name": "Swarm intelligence transmission", "book": "faith", "summary": "A Swarm fragment hidden in Rickar transmits intelligence during his death."},
+    "return_to_world_palace": {"name": "Warship survivors return", "book": "faith", "summary": "Campar, Ghati and Vaudai return physically and emotionally transformed."},
+    "clae_emergence": {"name": "Emergence of Clae Audin", "book": "faith", "summary": "The Swarm accepts that its hosts are dead and forms its own autonomous identity."},
+    "brun_arm_breaking": {"name": "Dafyd's ritual correction of Brun", "book": "faith", "summary": "Dafyd breaks Brun's arm to prevent the Carryx from treating his work stoppage as a fatal challenge."},
+    "sovran_succession": {"name": "Carryx Sovran succession", "book": "faith", "summary": "A daughter kills and replaces the reigning Sovran without interrupting the empire."},
+    "two_sovrans_hypothesis": {"name": "Two-Sovrans hypothesis", "book": "faith", "summary": "Dafyd begins considering whether competing Sovrans could fracture Carryx unity."},
+    "livesuit_enlistment": {"name": "Kirin and Piotr enlist", "book": "livesuit", "summary": "Piotr and then Kirin leave civilian rescue work for a promised eight-year livesuit tour."},
+    "livesuit_bonding": {"name": "Permanent livesuit bonding", "book": "livesuit", "summary": "Recruits are encased in semibiological armor without being told that it cannot safely be removed."},
+    "first_livesuit_deployment": {"name": "Kirin's first deployment", "book": "livesuit", "summary": "Kirin enters combat under Simeon and Corval and begins learning the suit's capabilities."},
+    "piotr_catastrophic_injury": {"name": "Piotr's catastrophic injury", "book": "livesuit", "summary": "Piotr is grievously injured; the livesuit progressively replaces or operates what remains."},
+    "relativistic_separation": {"name": "Relativistic separation from civilian life", "book": "livesuit", "summary": "Travel and time dilation allow decades to pass outside while Kirin experiences only a few years."},
+    "egg_chamber_assault": {"name": "Assault on the alien egg chamber", "book": "livesuit", "summary": "Livesuit forces destroy a strategically important reproductive site at enormous subsequent cost."},
+    "combat_unit_reshuffling": {"name": "Livesuit unit reshuffling", "book": "livesuit", "summary": "Casualties and reassignment repeatedly dissolve Kirin's temporary military communities."},
+    "mina_warning": {"name": "Mina's censored warning", "book": "livesuit", "summary": "An elderly Mina sends Kirin an indirect message intended to reveal that livesuit soldiers never return home."},
+    "piotr_truth_discovered": {"name": "Truth about Piotr", "book": "livesuit", "summary": "Kirin scans Piotr and realizes that the suit has replaced his friend to the point that Piotr is probably dead."},
+    "kirin_integration_discovered": {"name": "Kirin discovers his own integration", "book": "livesuit", "summary": "Kirin learns that his damaged foot and much of his leg have already been replaced by livesuit material."}
+  },
+  "concepts": {
+    "deathless_template": {
+      "name": "Deathless template hypothesis",
+      "status": "inference",
+      "summary": "The Deathless may be a transmissible technological or biological pattern rather than one species.",
+      "related_characters": ["The Swarm / Clae Audin", "Kirin Foss", "Piotr", "Estebán Corval", "Corvall", "Campar", "Garral Pär"]
+    },
+    "identity_continuity": {
+      "name": "Identity continuity after replacement",
+      "status": "theme",
+      "summary": "The works question whether preserved behavior and memory constitute survival of the original person.",
+      "related_characters": ["Kirin Foss", "Piotr", "The Swarm / Clae Audin", "Else Annalise Yannin", "Jellit Kaul", "Ameer Kindred", "Corvall"]
+    },
+    "institutional_deception": {
+      "name": "Institutional deception",
+      "status": "theme",
+      "summary": "The livesuit program conceals permanent service while Carryx rule states its coercion openly.",
+      "related_characters": ["Kirin Foss", "Piotr", "Mina", "Sergeant Huang", "Dafyd Alkhor", "Ekur-Tkalal"]
+    },
+    "time_displacement": {
+      "name": "Relativistic and historical displacement",
+      "status": "established_with_unresolved_chronology",
+      "summary": "Time dilation separates livesuit soldiers from civilians, while the novella's exact distance from the novels remains unknown.",
+      "related_characters": ["Kirin Foss", "Mina", "Piotr", "Estebán Corval", "Corvall"]
+    },
+    "outside_inside_assimilation": {
+      "name": "Assimilation from outside and inside",
+      "status": "interpretive_comparison",
+      "summary": "Livesuits replace bodies from the exterior while the Swarm infiltrates and reconstructs hosts from within.",
+      "related_characters": ["Kirin Foss", "Piotr", "The Swarm / Clae Audin", "Else Annalise Yannin", "Jellit Kaul"]
+    }
+  },
+  "continuity_links": [
+    {
+      "from": "Estebán Corval",
+      "to": "Corvall",
+      "type": "possibly_same_character",
+      "confidence": "low",
+      "status": "unconfirmed",
+      "evidence": ["near-identical names", "livesuit or living black armor", "veteran leadership", "self-sacrificial protection of civilians"],
+      "counterevidence": ["different printed spelling", "no explicit recognition or shared-history confirmation", "chronology unresolved"]
+    },
+    {
+      "from": "Piotr",
+      "to": "Jellit Kaul",
+      "type": "thematic_parallel",
+      "confidence": "high",
+      "status": "interpretive",
+      "evidence": ["original person apparently dead", "technology continues recognizable behavior", "close friend or sibling is deceived by continuity of appearance"]
+    },
+    {
+      "from": "Kirin Foss",
+      "to": "The Swarm / Clae Audin",
+      "type": "technological_parallel",
+      "confidence": "medium",
+      "status": "inferred_not_confirmed",
+      "evidence": ["progressive host replacement", "behavioral control", "probable connection to Deathless technology"]
+    },
+    {
+      "from": "Piotr",
+      "to": "The Swarm / Clae Audin",
+      "type": "identity_reconstruction_parallel",
+      "confidence": "high",
+      "status": "interpretive",
+      "evidence": ["technology reproduces the behavior of a consumed person", "uncertain boundary between preserved memory and surviving self"]
+    },
+    {
+      "from": "Mina",
+      "to": "Jessyn Kaul",
+      "type": "truth_bearer_parallel",
+      "confidence": "medium",
+      "status": "interpretive",
+      "evidence": ["both discover a destabilizing truth about the supposed human side of the war", "both must communicate indirectly under surveillance"]
+    }
+  ]
+}
