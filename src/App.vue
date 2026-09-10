@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
+import { computed, onMounted, ref, watch } from 'vue'
 import rawDataset from './data/captive-war-characters.json'
 import { createCharacterRepository, validateDataset } from './repository'
 import type { Dataset, LookupResult, ResolvedAssociation } from './types'
@@ -12,14 +12,30 @@ const query = ref('')
 const result = ref<LookupResult | null>(null)
 const searched = ref(false)
 const isDark = ref(false)
+const limitSpoilers = ref(true)
+const spoilerBlocked = ref(false)
 const input = ref<HTMLInputElement | null>(null)
 
-const suggestions = computed(() => repository.suggestions(query.value))
+const suggestions = computed(() => repository.suggestions(query.value).filter((name) =>
+  !limitSpoilers.value || dataset.characters[name].books.includes('mercy'),
+))
 const featured = ['Dafyd Alkhor', 'The Swarm / Clae Audin', 'Jessyn Kaul', 'Kirin Foss']
+const visibleFeatured = computed(() => featured.filter((name) =>
+  !limitSpoilers.value || dataset.characters[name].books.includes('mercy'),
+))
+const visibleBooks = computed(() => result.value?.books.filter((book) => !limitSpoilers.value || book === 'mercy') ?? [])
+const visibleAssociations = computed(() => result.value?.associationsResolved.filter((edge) =>
+  !limitSpoilers.value || edge.books.includes('mercy'),
+) ?? [])
+const visibleEvents = computed(() => result.value?.eventsResolved.filter((event) =>
+  !limitSpoilers.value || event.book === 'mercy',
+) ?? [])
 
 function search(value = query.value) {
   query.value = value
-  result.value = repository.getCharacter(value)
+  const match = repository.getCharacter(value)
+  spoilerBlocked.value = Boolean(limitSpoilers.value && match && !match.books.includes('mercy'))
+  result.value = spoilerBlocked.value ? null : match
   searched.value = true
   if (result.value) query.value = result.value.name
   requestAnimationFrame(() => document.querySelector<HTMLElement>('#result')?.focus())
@@ -49,6 +65,12 @@ onMounted(() => {
   isDark.value = localStorage.getItem('cw-theme') === 'dark'
     || (!localStorage.getItem('cw-theme') && matchMedia('(prefers-color-scheme: dark)').matches)
   document.documentElement.dataset.theme = isDark.value ? 'dark' : 'light'
+  limitSpoilers.value = localStorage.getItem('cw-limit-spoilers') !== 'false'
+})
+
+watch(limitSpoilers, (limited) => {
+  localStorage.setItem('cw-limit-spoilers', String(limited))
+  if (searched.value && query.value) search()
 })
 </script>
 
@@ -59,10 +81,17 @@ onMounted(() => {
         <span class="brand-mark" aria-hidden="true">CW</span>
         <span>Character Archive</span>
       </a>
-      <button class="theme-toggle" type="button" :aria-label="`Use ${isDark ? 'light' : 'dark'} theme`" @click="toggleTheme">
-        <span aria-hidden="true">{{ isDark ? '☀' : '◐' }}</span>
-        {{ isDark ? 'Light' : 'Dark' }}
-      </button>
+      <div class="header-controls">
+        <label class="spoiler-toggle">
+          <input v-model="limitSpoilers" type="checkbox" />
+          <span aria-hidden="true"></span>
+          Limit spoilers
+        </label>
+        <button class="theme-toggle" type="button" :aria-label="`Use ${isDark ? 'light' : 'dark'} theme`" @click="toggleTheme">
+          <span aria-hidden="true">{{ isDark ? '☀' : '◐' }}</span>
+          {{ isDark ? 'Light' : 'Dark' }}
+        </button>
+      </div>
     </header>
 
     <main>
@@ -93,7 +122,7 @@ onMounted(() => {
 
         <div v-if="!result && !searched" class="featured" aria-label="Suggested characters">
           <span>Start with</span>
-          <button v-for="name in featured" :key="name" type="button" @click="openCharacter(name)">
+          <button v-for="name in visibleFeatured" :key="name" type="button" @click="openCharacter(name)">
             {{ name.replace('The Swarm / ', '') }}
           </button>
         </div>
@@ -107,9 +136,10 @@ onMounted(() => {
       <section v-else-if="searched && !result" id="result" class="empty-state" tabindex="-1">
         <span aria-hidden="true">?</span>
         <h2>No character found</h2>
-        <p>There’s no canonical name or alias matching “{{ query }}”. Check the spelling or try one of these:</p>
+        <p v-if="spoilerBlocked">That character appears only in a later work. Turn off “Limit spoilers” to view the record.</p>
+        <p v-else>There’s no canonical name or alias matching “{{ query }}”. Check the spelling or try one of these:</p>
         <div class="empty-actions">
-          <button v-for="name in (suggestions.length ? suggestions : featured.slice(0, 3))" :key="name" @click="openCharacter(name)">
+          <button v-for="name in (suggestions.length ? suggestions : visibleFeatured.slice(0, 3))" :key="name" @click="openCharacter(name)">
             {{ name }}
           </button>
         </div>
@@ -122,17 +152,18 @@ onMounted(() => {
             <div>
               <p class="result-label">Character record</p>
               <h2>{{ result.name }}</h2>
-              <p v-if="result.aliases.length" class="aliases">Also known as {{ result.aliases.join(' · ') }}</p>
+              <p v-if="result.aliases.length && !limitSpoilers" class="aliases">Also known as {{ result.aliases.join(' · ') }}</p>
             </div>
           </div>
-          <dl class="facts">
+          <dl v-if="!limitSpoilers" class="facts">
             <div><dt>Sex</dt><dd>{{ readable(result.sex) }}</dd></div>
             <div v-if="result.gender_presentation"><dt>Presentation</dt><dd>{{ readable(result.gender_presentation) }}</dd></div>
             <div><dt>Species</dt><dd>{{ readable(result.species) }}</dd></div>
           </dl>
-          <p class="summary">{{ result.summary }}</p>
+          <p v-if="!limitSpoilers" class="summary">{{ result.summary }}</p>
+          <p v-else class="spoiler-notice">Showing only details explicitly tagged for <em>The Mercy of Gods</em>. Untagged and later-book details are hidden.</p>
           <div class="book-row" aria-label="Book appearances">
-            <span v-for="book in result.books" :key="book">{{ dataset.metadata.books[book] }}</span>
+            <span v-for="book in visibleBooks" :key="book">{{ dataset.metadata.books[book] }}</span>
           </div>
         </header>
 
@@ -140,11 +171,11 @@ onMounted(() => {
           <section class="panel relationships">
             <div class="section-heading">
               <div><p class="section-kicker">Network</p><h3>Relationships</h3></div>
-              <span>{{ result.associationsResolved.length }} connections</span>
+              <span>{{ visibleAssociations.length }} connections</span>
             </div>
-            <div v-if="result.associationsResolved.length" class="relationship-list">
+            <div v-if="visibleAssociations.length" class="relationship-list">
               <button
-                v-for="(edge, index) in result.associationsResolved"
+                v-for="(edge, index) in visibleAssociations"
                 :key="`${edge.direction}-${edge.name}-${edge.type}-${index}`"
                 class="relationship"
                 type="button"
@@ -168,8 +199,8 @@ onMounted(() => {
             <p v-else class="muted">No direct relationships are recorded for this character.</p>
           </section>
 
-          <aside class="sidebar">
-            <section class="panel">
+          <aside v-if="!limitSpoilers" class="sidebar">
+            <section v-if="!limitSpoilers" class="panel">
               <p class="section-kicker">Affiliations</p>
               <h3>Groups</h3>
               <ul v-if="result.groupsResolved.length" class="detail-list">
@@ -180,7 +211,7 @@ onMounted(() => {
               <p v-else class="muted">No groups recorded.</p>
             </section>
 
-            <section v-if="result.continuityResolved.length" class="panel continuity">
+            <section v-if="!limitSpoilers && result.continuityResolved.length" class="panel continuity">
               <p class="section-kicker">Cross-book</p>
               <h3>Continuity links</h3>
               <button v-for="link in result.continuityResolved" :key="`${link.from}-${link.to}`" @click="openCharacter(link.associatedCharacter)">
@@ -191,19 +222,19 @@ onMounted(() => {
           </aside>
         </div>
 
-        <section v-if="result.eventsResolved.length" class="panel timeline">
+        <section v-if="visibleEvents.length" class="panel timeline">
           <div class="section-heading">
             <div><p class="section-kicker">Story</p><h3>Connected events</h3></div>
           </div>
           <ol>
-            <li v-for="event in result.eventsResolved" :key="event.id">
+            <li v-for="event in visibleEvents" :key="event.id">
               <span class="timeline-dot" aria-hidden="true"></span>
               <div><small>{{ dataset.metadata.books[event.book] }}</small><strong>{{ event.name }}</strong><p>{{ event.summary }}</p></div>
             </li>
           </ol>
         </section>
 
-        <section v-if="result.conceptsResolved.length" class="concepts">
+        <section v-if="!limitSpoilers && result.conceptsResolved.length" class="concepts">
           <p class="section-kicker">Ideas & interpretation</p>
           <h3>Related concepts</h3>
           <div class="concept-grid">

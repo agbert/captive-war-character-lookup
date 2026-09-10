@@ -2,6 +2,8 @@
 
 A Vue 3 and TypeScript character lookup for the supplied Captive's War dataset. Search by canonical name or alias, then explore identity details, book appearances, group memberships, direct and incoming relationships, events, concepts, and cross-book continuity links.
 
+The persistent “Limit spoilers” control is enabled by default. It shows only characters, associations, and events explicitly tagged for *The Mercy of Gods*. Fields without book-level provenance are hidden while the limit is active.
+
 ## Run locally
 
 ```bash

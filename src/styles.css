@@ -39,6 +39,13 @@ button:focus-visible, input:focus-visible, a:focus-visible { outline: 3px solid 
 .brand { display: flex; align-items: center; gap: 12px; color: var(--ink); text-decoration: none; font-family: 'League Spartan', sans-serif; font-weight: 700; letter-spacing: .01em; }
 .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; color: var(--surface); background: var(--ink); border-radius: 50%; font-family: 'League Spartan', sans-serif; font-size: 14px; font-weight: 800; }
 .theme-toggle { border: 1px solid var(--line); background: color-mix(in srgb, var(--surface) 70%, transparent); border-radius: 99px; padding: 8px 13px; cursor: pointer; }
+.header-controls { display: flex; align-items: center; gap: 10px; }
+.spoiler-toggle { display: flex; align-items: center; gap: 8px; padding: 8px 12px; border: 1px solid var(--line); background: color-mix(in srgb, var(--surface) 70%, transparent); border-radius: 99px; font-size: 13px; cursor: pointer; }
+.spoiler-toggle input { position: absolute; width: 1px; height: 1px; opacity: 0; }
+.spoiler-toggle > span { width: 15px; height: 15px; border: 1px solid var(--muted); border-radius: 4px; display: grid; place-items: center; }
+.spoiler-toggle input:checked + span { border-color: var(--accent); background: var(--accent); }
+.spoiler-toggle input:checked + span::after { content: '✓'; color: white; font-size: 11px; line-height: 1; }
+.spoiler-toggle input:focus-visible + span { outline: 3px solid color-mix(in srgb, var(--accent) 65%, transparent); outline-offset: 3px; }
 
 main { width: min(1120px, calc(100% - 48px)); margin: 0 auto; }
 .hero { text-align: center; padding: 112px 0 120px; transition: padding .35s ease; }
@@ -73,6 +80,7 @@ h1 { max-width: 1000px; margin: 0 auto 26px; font: 900 clamp(64px, 10vw, 112px)/
 .facts dt { color: color-mix(in srgb, var(--bg) 55%, transparent); text-transform: uppercase; letter-spacing: .13em; font-size: 10px; font-weight: 700; }
 .facts dd { margin: 0; font-weight: 600; }
 .summary { max-width: 790px; color: color-mix(in srgb, var(--bg) 82%, transparent); line-height: 1.7; font-size: 17px; }
+.spoiler-notice { max-width: 720px; margin: 30px 0 24px; color: color-mix(in srgb, var(--bg) 72%, transparent); line-height: 1.6; font-size: 14px; }
 .book-row { display: flex; flex-wrap: wrap; gap: 8px; }
 .book-row span { border: 1px solid color-mix(in srgb, var(--bg) 23%, transparent); padding: 7px 11px; border-radius: 5px; font: italic 14px Georgia, serif; }
 
@@ -133,6 +141,9 @@ footer { width: min(1120px, calc(100% - 48px)); margin: 40px auto 0; padding: 28
 @media (max-width: 800px) {
   main { width: min(100% - 28px, 680px); }
   .site-header { padding: 20px 18px; }
+  .header-controls { gap: 6px; }
+  .spoiler-toggle { padding: 8px; }
+  .theme-toggle { padding: 8px 10px; }
   .hero { padding: 70px 0 82px; }
   .hero.compact { padding: 28px 0 36px; }
   h1 { font-size: clamp(58px, 17vw, 82px); }
@@ -144,6 +155,13 @@ footer { width: min(1120px, calc(100% - 48px)); margin: 40px auto 0; padding: 28
   .content-grid { grid-template-columns: 1fr; }
   .timeline ol, .concept-grid { grid-template-columns: 1fr; }
   footer { width: calc(100% - 28px); flex-direction: column; }
+}
+
+@media (max-width: 560px) {
+  .brand > span:last-child { display: none; }
+  .site-header { gap: 10px; }
+  .spoiler-toggle { font-size: 12px; }
+  .theme-toggle { font-size: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
