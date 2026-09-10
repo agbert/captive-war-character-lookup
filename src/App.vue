@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
+import { version as appVersion } from '../package.json'
 import rawDataset from './data/captive-war-characters.json'
 import { createCharacterRepository, validateDataset } from './repository'
 import type { Dataset, LookupResult, ResolvedAssociation } from './types'
@@ -250,7 +251,7 @@ watch(limitSpoilers, (limited) => {
 
     <footer>
       <span>Contains major spoilers for The Captive’s War.</span>
-      <span>{{ repository.names.length }} character records · Dataset {{ dataset.metadata.schema_version }}</span>
+      <span>Version {{ appVersion }} · {{ repository.names.length }} character records · Dataset {{ dataset.metadata.schema_version }}</span>
     </footer>
   </div>
 </template>
